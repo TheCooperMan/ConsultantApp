@@ -12,7 +12,7 @@ export class ConsultantComponent implements OnInit {
     firstname: 'ismail',
     email: 'm.ismailfadli@gmail.com',
     phoneNumber: 751505587
-  }
+  };
   constructor() { }
 
   ngOnInit() {
