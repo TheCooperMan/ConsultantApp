@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consultant.component.css']
 })
 export class ConsultantComponent implements OnInit {
-
   consultants = CONSULTANT;
-
+  selectedConsultant: Consultant;
+  onSelect(consultant: Consultant): void {
+  this.selectedConsultant = consultant;
+}
   constructor() { }
 
   ngOnInit() {

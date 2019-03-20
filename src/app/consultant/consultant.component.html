@@ -15,14 +15,25 @@
         <td> {{consultant.firstname}}</td>
         <td> {{consultant.email}}</td>
         <td> {{consultant.phoneNumber}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="onSelect(consultant)">Edit</button></td>
       </tr>
     </tbody>
   </table>
 
-  <div>
+  <div *ngIf="selectedConsultant">
+      <h2>{{selectedConsultant.lastname | uppercase}} Details</h2>
     Modify name consultant:
-    <label>name:
-      <input [(ngModel)]="consultants[0].lastname" placeholder="name"/>
+    <label>Nom:
+      <input [(ngModel)]="selectedConsultant.lastname" placeholder="Nom"/>
     </label>
+    <label>Prénom:
+        <input [(ngModel)]="selectedConsultant.firstname" placeholder="Prénom"/>
+      </label>
+      <label>email:
+          <input [(ngModel)]="selectedConsultant.email" placeholder="Email"/>
+        </label>
+        <label>Numéro de Télephone:
+            <input [(ngModel)]="selectedConsultant.phoneNumber" placeholder="Numéro de Télephone"/>
+          </label>
   </div>
 </div>
