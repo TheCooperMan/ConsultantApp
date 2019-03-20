@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let consultant of consultants">
+      <tr *ngFor="let consultant of consultants" [class.selected]="consultant === selectedConsultant">
         <td> {{consultant.lastname | uppercase}}</td>
         <td> {{consultant.firstname}}</td>
         <td> {{consultant.email}}</td>
@@ -20,20 +20,6 @@
     </tbody>
   </table>
 
-  <div *ngIf="selectedConsultant">
-      <h2>{{selectedConsultant.lastname | uppercase}} Details</h2>
-    Modify name consultant:
-    <label>Nom:
-      <input [(ngModel)]="selectedConsultant.lastname" placeholder="Nom"/>
-    </label>
-    <label>Prénom:
-        <input [(ngModel)]="selectedConsultant.firstname" placeholder="Prénom"/>
-      </label>
-      <label>email:
-          <input [(ngModel)]="selectedConsultant.email" placeholder="Email"/>
-        </label>
-        <label>Numéro de Télephone:
-            <input [(ngModel)]="selectedConsultant.phoneNumber" placeholder="Numéro de Télephone"/>
-          </label>
-  </div>
+  <app-consultant-detail [consultant]="selectedConsultant"></app-consultant-detail>
+
 </div>

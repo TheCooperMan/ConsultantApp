@@ -1,0 +1,16 @@
+<div *ngIf="consultant">
+    <h2>{{consultant.lastname | uppercase}} Details</h2>
+  Modify name consultant:
+  <label>Nom:
+    <input [(ngModel)]="consultant.lastname" placeholder="Nom"/>
+  </label>
+  <label>Prénom:
+      <input [(ngModel)]="consultant.firstname" placeholder="Prénom"/>
+    </label>
+    <label>email:
+        <input [(ngModel)]="consultant.email" placeholder="Email"/>
+      </label>
+      <label>Numéro de Télephone:
+          <input [(ngModel)]="consultant.phoneNumber" placeholder="Numéro de Télephone"/>
+        </label>
+</div>
