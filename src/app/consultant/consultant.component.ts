@@ -1,5 +1,7 @@
+import { CONSULTANT } from './../mock-consultant';
 import { Consultant } from './../consultant';
 import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-consultant',
   templateUrl: './consultant.component.html',
@@ -7,12 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultantComponent implements OnInit {
 
-  consultant: Consultant = {
-    lastname: 'elfadli',
-    firstname: 'ismail',
-    email: 'm.ismailfadli@gmail.com',
-    phoneNumber: 751505587
-  };
+  consultants = CONSULTANT;
+
   constructor() { }
 
   ngOnInit() {

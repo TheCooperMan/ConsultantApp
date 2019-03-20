@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let consultant of consultants">
         <td> {{consultant.lastname | uppercase}}</td>
         <td> {{consultant.firstname}}</td>
         <td> {{consultant.email}}</td>
@@ -22,7 +22,7 @@
   <div>
     Modify name consultant:
     <label>name:
-      <input [(ngModel)]="consultant.lastname" placeholder="name"/>
+      <input [(ngModel)]="consultants[0].lastname" placeholder="name"/>
     </label>
   </div>
 </div>
