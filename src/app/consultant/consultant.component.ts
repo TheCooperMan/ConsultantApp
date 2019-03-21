@@ -13,6 +13,7 @@ export class ConsultantComponent implements OnInit {
   onSelect(consultant: Consultant): void {
   this.selectedConsultant = consultant;
 }
+
   constructor() { }
 
   ngOnInit() {

@@ -7,6 +7,7 @@
         <th scope="col">Prénom</th>
         <th scope="col">Email</th>
         <th scope="col">Télephone</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +16,10 @@
         <td> {{consultant.firstname}}</td>
         <td> {{consultant.email}}</td>
         <td> {{consultant.phoneNumber}}</td>
-        <td><button type="button" class="btn btn-primary" (click)="onSelect(consultant)">Edit</button></td>
+        <td>
+          <button type="button"  (click)="onSelect(consultant)"><img src="https://img.icons8.com/cotton/30/000000/multi-edit.png"></button>
+          <button type="button"><img src="https://img.icons8.com/color/30/000000/cancel.png"></button>
+        </td>
       </tr>
     </tbody>
   </table>

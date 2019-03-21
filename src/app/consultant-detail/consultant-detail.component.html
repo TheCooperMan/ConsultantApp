@@ -1,16 +1,30 @@
-<div *ngIf="consultant">
-    <h2>{{consultant.lastname | uppercase}} Details</h2>
-  Modify name consultant:
-  <label>Nom:
+<div class="card" style="width: 20rem;" *ngIf="consultant">
+  <div class="card-header">
+    Informations:
+  </div>
+  <ul class="list-group list-group-flush">
+ <li class="list-group-item">Nom
     <input [(ngModel)]="consultant.lastname" placeholder="Nom"/>
-  </label>
-  <label>Prénom:
-      <input [(ngModel)]="consultant.firstname" placeholder="Prénom"/>
-    </label>
-    <label>email:
-        <input [(ngModel)]="consultant.email" placeholder="Email"/>
-      </label>
-      <label>Numéro de Télephone:
+  </li>
+  <li class="list-group-item">Prénom
+    <input [(ngModel)]="consultant.firstname" placeholder="Prénom"/>
+  </li>
+  <li class="list-group-item">Email
+    <input [(ngModel)]="consultant.email" placeholder="Email"/>
+  </li>
+
+  <li class="list-group-item">Numéro de Télephone
           <input [(ngModel)]="consultant.phoneNumber" placeholder="Numéro de Télephone"/>
-        </label>
+  </li>
+
+</ul>
+</div>
+
+<div >
+
+
+
+
+
+
 </div>
