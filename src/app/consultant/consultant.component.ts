@@ -14,6 +14,14 @@ export class ConsultantComponent implements OnInit {
   this.selectedConsultant = consultant;
 }
 
+onDelete(consultant: Consultant): void {
+  console.log('Consultant Was Deleted');
+}
+
+onAdd() {
+  console.log('Client est ajouté!');
+
+}
   constructor() { }
 
   ngOnInit() {
