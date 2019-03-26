@@ -1,9 +1,9 @@
 <div class="container">
   <!-- Content here -->
   <div class="col-md-auto">
-    <button type="button" class="btn btn-info" (click)='onAdd()'>Ajouter</button>
+    <button mat-raised-button type="button" class="btn btn-info">Ajouter</button>
 </div>
-  <table class="table">
+  <table class="table table-striped" >
     <thead>
       <tr>
         <th scope="col">Nom</th>
@@ -20,13 +20,12 @@
         <td> {{consultant.email}}</td>
         <td> {{consultant.phoneNumber}}</td>
         <td>
-          <button type="button" (click)="onSelect(consultant)"><img src="https://img.icons8.com/cotton/30/000000/multi-edit.png"></button>
+          <button type="button" (click)="onSelect()"><img src="https://img.icons8.com/cotton/30/000000/multi-edit.png"></button>
           <button type="button" (click)="onDelete(consultant)"><img src="https://img.icons8.com/color/30/000000/cancel.png"></button>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <app-consultant-detail [consultant]="selectedConsultant"></app-consultant-detail>
 
 </div>

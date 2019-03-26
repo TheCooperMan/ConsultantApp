@@ -1,30 +1,33 @@
-<div class="card" style="width: 20rem;" *ngIf="consultant">
-  <div class="card-header">
-    Informations:
+  <div class="card">
+    <div class="modal-header card-header">
+        <h4 class="modal-title"> Informations:</h4>
+
+    </div>
+    <ul class="modal-body list-group list-group-flush">
+      <li class="list-group-item">
+        Nom
+        <input [(ngModel)]="consultant.lastname" placeholder="Nom" />
+      </li>
+      <li class="list-group-item">
+        Prénom
+        <input [(ngModel)]="consultant.firstname" placeholder="Prénom" />
+      </li>
+      <li class="list-group-item">
+        Email
+        <input [(ngModel)]="consultant.email" placeholder="Email" />
+      </li>
+
+      <li class="list-group-item">
+        Numéro de Télephone
+        <input
+          [(ngModel)]="consultant.phoneNumber"
+          placeholder="Numéro de Télephone"
+        />
+      </li>
+
+    </ul>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-info" (click)="closeModal()">Valider</button>
+        <button type="button" class="btn" (click)="closeModal()">Close</button>
+      </div>
   </div>
-  <ul class="list-group list-group-flush">
- <li class="list-group-item">Nom
-    <input [(ngModel)]="consultant.lastname" placeholder="Nom"/>
-  </li>
-  <li class="list-group-item">Prénom
-    <input [(ngModel)]="consultant.firstname" placeholder="Prénom"/>
-  </li>
-  <li class="list-group-item">Email
-    <input [(ngModel)]="consultant.email" placeholder="Email"/>
-  </li>
-
-  <li class="list-group-item">Numéro de Télephone
-          <input [(ngModel)]="consultant.phoneNumber" placeholder="Numéro de Télephone"/>
-  </li>
-  <button type='button' class="btn btn-info" (onclick)="consultant = false">Validera</button>
-</ul>
-</div>
-
-<div >
-
-
-
-
-
-
-</div>
