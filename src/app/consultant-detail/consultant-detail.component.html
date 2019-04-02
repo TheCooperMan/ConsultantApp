@@ -4,27 +4,35 @@
 
     </div>
     <ul class="modal-body list-group list-group-flush">
+        <form>
+            <div class="form-group">
       <li class="list-group-item">
         Nom
-        <input [(ngModel)]="consultant.lastname" placeholder="Nom" />
+        <input [(ngModel)]="consultant.lastname" name="consultant.lastname" placeholder="Nom" />
+
       </li>
+    </div>
+    <div class="form-group">
       <li class="list-group-item">
         Prénom
-        <input [(ngModel)]="consultant.firstname" placeholder="Prénom" />
+        <input [(ngModel)]="consultant.firstname" name="consultant.firstname" placeholder="Prénom" />
       </li>
+    </div>
+    <div class="form-group">
       <li class="list-group-item">
         Email
-        <input [(ngModel)]="consultant.email" placeholder="Email" />
-      </li>
-
+        <input [(ngModel)]="consultant.email" name="consultant.email" placeholder="Email" />
+      </li></div>
+      <div class="form-group">
       <li class="list-group-item">
         Numéro de Télephone
         <input
           [(ngModel)]="consultant.phoneNumber"
-          placeholder="Numéro de Télephone"
+          placeholder="Numéro de Télephone" name="consultant.phoneNumber"
         />
       </li>
-
+      </div>
+</form>
     </ul>
     <div class="modal-footer">
         <button type="button" class="btn btn-info" (click)="closeModal()">Valider</button>
