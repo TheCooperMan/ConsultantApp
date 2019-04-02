@@ -12,9 +12,10 @@ import { Component, OnInit } from "@angular/core";
 export class ConsultantComponent implements OnInit {
   consultants = CONSULTANT;
   selectedConsultant: Consultant;
-
-  onSelect(): void {
+  public searchString: string;
+  openEditModal(consultant): void {
     const modalRef = this.modalService.open(ConsultantDetailComponent);
+    console.log(consultant);
     modalRef.result
       .then(result => {
         console.log(result);
@@ -24,12 +25,22 @@ export class ConsultantComponent implements OnInit {
       });
   }
 
+  openAddModal(): void {
+    const modalRef = this.modalService.open(ConsultantDetailComponent);
+    modalRef.result
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   onDelete(consultant: Consultant): void {
-    console.log("Consultant Was Deleted");
+    console.log('Consultant Was Deleted');
   }
 
   onAdd() {
-    console.log("Client est ajouté!");
+    console.log('Client est ajouté!');
   }
   constructor(private modalService: NgbModal) {}
 

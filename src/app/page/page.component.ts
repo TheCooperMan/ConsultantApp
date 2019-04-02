@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-  collectionSize = Consultant.length;
+
   constructor() { }
 
   ngOnInit() {

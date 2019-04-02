@@ -1,7 +1,8 @@
 <div class="container">
   <!-- Content here -->
   <div class="col-md-auto">
-    <button mat-raised-button type="button" class="btn btn-info">Ajouter</button>
+      <input class="form-control" type="search" name="searchString" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
+    <button mat-raised-button type="button" class="btn btn-info" (click)="openAddModal()">Ajouter</button>
 </div>
   <table class="table table-striped" >
     <thead>
@@ -14,13 +15,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let consultant of consultants" [class.selected]="consultant === selectedConsultant">
+      <tr *ngFor="let consultant of consultants | filter: searchString" [class.selected]="consultant === selectedConsultant"  >
         <td> {{consultant.lastname | uppercase}}</td>
         <td> {{consultant.firstname}}</td>
         <td> {{consultant.email}}</td>
         <td> {{consultant.phoneNumber}}</td>
         <td>
-          <button type="button" (click)="onSelect()"><img src="https://img.icons8.com/cotton/30/000000/multi-edit.png"></button>
+          <button type="button" (click)="openEditModal(consultant)"><img src="https://img.icons8.com/cotton/30/000000/multi-edit.png"></button>
           <button type="button" (click)="onDelete(consultant)"><img src="https://img.icons8.com/color/30/000000/cancel.png"></button>
         </td>
       </tr>
