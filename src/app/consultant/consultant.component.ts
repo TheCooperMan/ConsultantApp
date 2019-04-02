@@ -5,24 +5,34 @@ import { Consultant } from "./../consultant";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-consultant",
-  templateUrl: "./consultant.component.html",
-  styleUrls: ["./consultant.component.css"]
+  selector: 'app-consultant',
+  templateUrl: './consultant.component.html',
+  styleUrls: ['./consultant.component.css']
 })
 export class ConsultantComponent implements OnInit {
   consultants = CONSULTANT;
   selectedConsultant: Consultant;
   public searchString: string;
-  openEditModal(consultant): void {
+
+  openEditModal(consultant: Consultant): void {
     const modalRef = this.modalService.open(ConsultantDetailComponent);
-    console.log(consultant);
-    modalRef.result
-      .then(result => {
-        console.log(result);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    modalRef.componentInstance.consultant = consultant;
+    //console.log(consultant);
+    modalRef.result.then((result) => {
+      console.log(result);
+      if (result!="Modal Closed")
+      {
+        console.log(consultant);
+        consultant.firstname = result.firstname;
+        consultant.lastname = result.lastname;
+        consultant.phoneNumber = result.phoneNumber;
+        consultant.email= result.email;
+      }
+  
+    }).catch((error) => {
+      console.log(error);
+    });
+   
   }
 
   openAddModal(): void {

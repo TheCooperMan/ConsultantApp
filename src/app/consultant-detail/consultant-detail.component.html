@@ -1,41 +1,32 @@
-  <div class="card" *ngIf="consultant">
-    <div class="modal-header card-header"  >
-        <h4 class="modal-title"> Informations:</h4>
+<div *ngIf='consultant'>
+  <div class="modal-header">
+    <h4 class="modal-title">Update Contact</h4>
+  </div>
 
-    </div>
-    <ul class="modal-body list-group list-group-flush">
-        <form>
-            <div class="form-group">
-      <li class="list-group-item">
-        Nom
-        <input [(ngModel)]="consultant.lastname" name="consultant.lastname" placeholder="Nom" />
-
-      </li>
-    </div>
-    <div class="form-group">
-      <li class="list-group-item">
-        Prénom
-        <input [(ngModel)]="consultant.firstname" name="consultant.firstname" placeholder="Prénom" />
-      </li>
-    </div>
-    <div class="form-group">
-      <li class="list-group-item">
-        Email
-        <input [(ngModel)]="consultant.email" name="consultant.email" placeholder="Email" />
-      </li></div>
-      <div class="form-group">
-      <li class="list-group-item">
-        Numéro de Télephone
-        <input
-          [(ngModel)]="consultant.phoneNumber"
-          placeholder="Numéro de Télephone" name="consultant.phoneNumber"
-        />
-      </li>
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="modal-body">
+      <div class="container">
+        <div class="form-group">
+            <label for="lastname">Nom</label>
+            <input type="text" class="form-control" formControlName="lastname" value="{{consultant.lastname}}">
+          </div>
+          <div class="form-group">
+              <label for="firstname">Prénom</label>
+              <input type="text" class="form-control" formControlName="firstname" value="{{consultant.firstname}}">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" formControlName="email" value="{{consultant.email}}">
+          </div>
+          <div class="form-group">
+              <label for="phoneNumber">Email</label>
+              <input type="text" class="form-control" formControlName="phoneNumber" value="{{consultant.phoneNumber}}">
+          </div>
       </div>
-</form>
-    </ul>
+      </div>
+    </form>
     <div class="modal-footer">
-        <button type="button" class="btn btn-info" (click)="closeModal()">Valider</button>
-        <button type="button" class="btn" (click)="closeModal()">Close</button>
+        <button class="btnSubmit btn-success" [disabled]="!myForm.valid"><i></i>Valider</button>
+        <button class="btnClose btn-close" (click)="closeModal()"><i class="fa fa-close">Fermer</i></button>
       </div>
   </div>
