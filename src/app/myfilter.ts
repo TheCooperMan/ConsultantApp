@@ -5,17 +5,7 @@ import { Pipe, PipeTransform, Injectable } from '@angular/core';
 })
 @Injectable()
 export class FilterPipe implements PipeTransform {
-   //  transform(items: any[], field: string, value: string): any[] {
-   //     if (!items) {
-   //         return [];
-   //     }
-   //      if (!field || !value) {
-   //         return items;
-   //      }
-   //      return items.filter(i =>
-   //          i[field].toLowerCase().includes(value.toLowerCase())
-   //      );
-   //     }
+  
     transform(value: any[], searchString: string ){
 
        if (!searchString) {
