@@ -28,11 +28,11 @@ export class ConsultantComponent implements OnInit {
         consultant.phoneNumber = result.phoneNumber;
         consultant.email= result.email;
       }
-  
+
     }).catch((error) => {
       console.log(error);
     });
-   
+
   }
 
   openAddModal(): void {
@@ -45,8 +45,15 @@ export class ConsultantComponent implements OnInit {
         console.log(error);
       });
   }
+
   onDelete(consultant: Consultant): void {
+
     console.log('Consultant Was Deleted');
+    for(let i = 0; i < this.consultants.length; ++i){
+      if (this.consultants[i].id === consultant.id) {
+          this.consultants.splice(i,1);
+      }
+  }
   }
 
   onAdd() {
