@@ -37,9 +37,10 @@ export class ConsultantComponent implements OnInit {
 
   openAddModal(): void {
     const modalRef = this.modalService.open(ConsultantDetailComponent);
-    modalRef.result
-      .then(result => {
+    modalRef.componentInstance.consultant = [];
+    modalRef.result.then(result => {
         console.log(result);
+        this.consultants.push(result);
       })
       .catch(error => {
         console.log(error);

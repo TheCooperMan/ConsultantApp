@@ -1,8 +1,16 @@
 <div class="container">
   <!-- Content here -->
   <div class="col-md-auto">
-      <input class="form-control" type="search" name="searchString" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
-    <button mat-raised-button type="button" class="btn btn-info" (click)="openAddModal()">Ajouter</button>
+      <div >
+          <form class="searchForm">
+              <div class="form-group">
+                  <div class="input-group">
+                      <input class="form-control" type="search" name="searchString" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
+                      <button type="button" class="btn btn-info" (click)="openAddModal()"><div class="ajoutContact">Ajouter</div></button>
+                  </div>
+              </div>
+          </form>
+          </div>
 </div>
   <table class="table table-striped" >
     <thead>
