@@ -9,7 +9,6 @@ export class FilterPipe implements PipeTransform {
     transform(value: any[], searchString: string ){
 
        if (!searchString) {
-
           return value ;
         }
 
