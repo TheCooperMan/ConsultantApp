@@ -5,15 +5,14 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { ConsultantComponent } from './consultant/consultant.component';
 import { ConsultantDetailComponent } from './consultant-detail/consultant-detail.component';
-import { PageComponent } from './page/page.component';
 import { FilterPipe } from './myfilter';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsultantComponent,
     ConsultantDetailComponent,
-    PageComponent,
     FilterPipe
   ],
   imports: [
