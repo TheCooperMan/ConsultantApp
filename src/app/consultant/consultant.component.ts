@@ -13,6 +13,9 @@ export class ConsultantComponent implements OnInit {
   consultants = CONSULTANT;
   selectedConsultant: Consultant;
   public searchString: string;
+  collectionSize = this.consultants.length;
+  page = 1;
+  pageSize = 10;
 
   openEditModal(consultant: Consultant): void {
     const modalRef = this.modalService.open(ConsultantDetailComponent);
@@ -39,8 +42,7 @@ export class ConsultantComponent implements OnInit {
     const modalRef = this.modalService.open(ConsultantDetailComponent);
     modalRef.componentInstance.consultant = [];
     modalRef.result.then(result => {
-        console.log(result);
-        this.consultants.push(result);
+        if (result != null) {this.consultants.push(result); this.collectionSize = this.consultants.length; }
       })
       .catch(error => {
         console.log(error);
@@ -48,6 +50,7 @@ export class ConsultantComponent implements OnInit {
   }
 
   onDelete(consultant: Consultant): void {
+    this.collectionSize = this.consultants.length - 1;
 
     console.log('Consultant Was Deleted');
     for(let i = 0; i < this.consultants.length; ++i){
